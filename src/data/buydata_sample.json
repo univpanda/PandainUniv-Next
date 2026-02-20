@@ -1,0 +1,306 @@
+{
+  "stats": {
+    "institution": 8478,
+    "graduates": 59475,
+    "education": 78037,
+    "career": 62233
+  },
+  "distributions": {
+    "year": {
+      "1926": 1,
+      "1929": 1,
+      "1930": 1,
+      "1936": 1,
+      "1941": 1,
+      "1945": 1,
+      "1947": 1,
+      "1950": 3,
+      "1951": 1,
+      "1952": 3,
+      "1953": 1,
+      "1954": 4,
+      "1955": 5,
+      "1956": 4,
+      "1957": 1,
+      "1958": 2,
+      "1959": 5,
+      "1960": 6,
+      "1961": 6,
+      "1962": 8,
+      "1963": 7,
+      "1964": 5,
+      "1965": 12,
+      "1966": 8,
+      "1967": 16,
+      "1968": 16,
+      "1969": 14,
+      "1970": 22,
+      "1971": 18,
+      "1972": 19,
+      "1973": 27,
+      "1974": 26,
+      "1975": 22,
+      "1976": 29,
+      "1977": 26,
+      "1978": 27,
+      "1979": 21,
+      "1980": 22,
+      "1981": 38,
+      "1982": 42,
+      "1983": 37,
+      "1984": 39,
+      "1985": 44,
+      "1986": 55,
+      "1987": 62,
+      "1988": 56,
+      "1989": 81,
+      "1990": 80,
+      "1991": 88,
+      "1992": 97,
+      "1993": 122,
+      "1994": 122,
+      "1995": 173,
+      "1996": 151,
+      "1997": 202,
+      "1998": 236,
+      "1999": 252,
+      "2000": 493,
+      "2001": 511,
+      "2002": 544,
+      "2003": 698,
+      "2004": 736,
+      "2005": 969,
+      "2006": 1126,
+      "2007": 1200,
+      "2008": 1379,
+      "2009": 1564,
+      "2010": 1621,
+      "2011": 3035,
+      "2012": 2214,
+      "2013": 2301,
+      "2014": 2643,
+      "2015": 2877,
+      "2016": 3160,
+      "2017": 3125,
+      "2018": 3341,
+      "2019": 3517,
+      "2020": 3507,
+      "2021": 3607,
+      "2022": 3936,
+      "2023": 3630,
+      "2024": 3443,
+      "2025": 1905,
+      "2026": 21,
+      "2027": 2
+    },
+    "subject": {
+      "Economics": 23256,
+      "Political Science": 2839,
+      "Mathematics": 2349,
+      "Philosophy": 2289,
+      "Finance": 2039,
+      "Statistics": 1814,
+      "Sociology": 1704,
+      "Agricultural Economics": 1608,
+      "English": 1492,
+      "Law": 1096,
+      "Linguistics": 1000,
+      "Accounting": 975,
+      "Marketing": 927,
+      "Management": 921,
+      "Psychology": 913,
+      "Public Policy": 770,
+      "Physics": 754,
+      "Anthropology": 740,
+      "History": 725,
+      "Operations Research": 588,
+      "Information Systems": 587,
+      "Theology": 545,
+      "Music": 540,
+      "Comparative Literature": 513,
+      "Neuroscience": 397,
+      "Biophysics": 377,
+      "Classics": 356,
+      "Communication": 334,
+      "Computational Biology": 332,
+      "Biomedical Sciences": 277
+    },
+    "institution": {
+      "University of Pennsylvania": 2524,
+      "University of Chicago": 2310,
+      "Stanford University": 1971,
+      "Duke University": 1762,
+      "Harvard University": 1693,
+      "Yale University": 1565,
+      "Princeton University": 1385,
+      "University of Notre Dame": 1369,
+      "Columbia University in the City of New York": 1288,
+      "Northwestern University": 1187,
+      "Ohio State University": 1156,
+      "Carnegie Mellon University": 1092,
+      "Pennsylvania State University": 1087,
+      "Washington University in St. Louis": 994,
+      "Massachusetts Institute of Technology": 987,
+      "University of Toronto": 901,
+      "University of Virginia": 898,
+      "University of California Berkeley": 889,
+      "Rutgers University New Brunswick": 836,
+      "The University of Texas at Austin": 799
+    }
+  },
+  "sample": {
+    "institution": [
+      {
+        "id": "46c7225a-1fac-40b8-af48-54ff85953b3b",
+        "english_name": "University of California, Los Angeles",
+        "country": "united states"
+      },
+      {
+        "id": "4a4d96ea-5359-4849-98f4-fe31fb15238e",
+        "english_name": "Toulouse 1 Capitole University",
+        "country": "france"
+      },
+      {
+        "id": "4b9ac38e-574b-4ddc-bbe2-df606c3768a0",
+        "english_name": "Johns Hopkins University",
+        "country": "united states"
+      },
+      {
+        "id": "5a6f7460-058c-4114-a36f-43857c619e1d",
+        "english_name": "University of Notre Dame",
+        "country": "united states"
+      },
+      {
+        "id": "5eb13b9e-02ea-4f2f-aeb6-f5d00b6d2ac5",
+        "english_name": "Clemson University",
+        "country": "united states"
+      }
+    ],
+    "graduates": [
+      {
+        "id": "00004897-4532-490f-9fe1-45d579fa7059",
+        "name": "lei xu",
+        "gender": null
+      },
+      {
+        "id": "0000ba91-697c-4187-8075-14b807887d1d",
+        "name": "lee wilson",
+        "gender": null
+      },
+      {
+        "id": "00026f2d-1fdb-4cf0-8f6e-096130339c4a",
+        "name": "kellan anfinson",
+        "gender": null
+      },
+      {
+        "id": "0003b3bd-d792-45ec-ba3a-045a3808f5df",
+        "name": "teresa blankmeyer burke",
+        "gender": "female"
+      },
+      {
+        "id": "00042280-5379-4546-8052-edc9a8cb945c",
+        "name": "loren goldman",
+        "gender": null
+      }
+    ],
+    "education": [
+      {
+        "id": "0000d7b7-d550-4bee-a85f-9fedebad2f66",
+        "graduate_id": "e2e0c38e-4279-441c-a795-2b56704ae851",
+        "degree": "phd",
+        "subject": "physics",
+        "field": null,
+        "program_id": "27a08a05-4d30-4b33-9e7b-7d1b15483ee1",
+        "program": "astrophysics",
+        "institution_id": "77101252-2afa-444c-99c4-b0d4d86f1e1c",
+        "year": "1985",
+        "advisor": null
+      },
+      {
+        "id": "00033579-21d8-4c95-9472-3928b5560905",
+        "graduate_id": "3e3fe2d4-fa0b-4fd4-bebe-9fea067ac102",
+        "degree": "phd",
+        "subject": "political science",
+        "field": null,
+        "program_id": "8d49eafc-4fbb-4a35-bb96-69d7c908fc88",
+        "program": "political science",
+        "institution_id": "5a6f7460-058c-4114-a36f-43857c619e1d",
+        "year": "2025",
+        "advisor": null
+      },
+      {
+        "id": "0003e608-3612-4aad-849c-d442f7e02120",
+        "graduate_id": "59c990cd-2960-4ec4-8113-c07620a393e7",
+        "degree": "phd",
+        "subject": "economics",
+        "field": null,
+        "program_id": "8fa3d6aa-061a-4fb4-9ec5-4a64fbc967e7",
+        "program": "economics",
+        "institution_id": "5eb13b9e-02ea-4f2f-aeb6-f5d00b6d2ac5",
+        "year": "2024",
+        "advisor": null
+      },
+      {
+        "id": "00040a27-af69-40e9-8532-a657acf3c628",
+        "graduate_id": "ee70c121-ffe9-4f98-99c1-51a0472a33c6",
+        "degree": "phd",
+        "subject": "economics",
+        "field": null,
+        "program_id": "6fe14d94-2190-4b70-8a27-1ad0ae68e6c5",
+        "program": "economic theory",
+        "institution_id": "4a4d96ea-5359-4849-98f4-fe31fb15238e",
+        "year": "2015",
+        "advisor": null
+      },
+      {
+        "id": "0005f710-c4a3-42ef-9e03-85304e8236ac",
+        "graduate_id": "20cf5e41-9b31-49d5-b51d-e921dc3dc212",
+        "degree": "phd",
+        "subject": "pathology",
+        "field": null,
+        "program_id": "581f14b3-5cd9-4a56-97d8-e493275b5686",
+        "program": "pathobiology",
+        "institution_id": "4b9ac38e-574b-4ddc-bbe2-df606c3768a0",
+        "year": "2020",
+        "advisor": null
+      }
+    ],
+    "career": [
+      {
+        "id": "00001eea-32b5-49de-af38-924617e8c3cd",
+        "graduate_id": "26ee9c96-d53e-4451-a579-f3aff0ddef55",
+        "year": "2022",
+        "designation": "assistant professor",
+        "institution_id": "ce495dc0-afac-45fe-87c7-31a26a496a6e"
+      },
+      {
+        "id": "00005a7e-b586-406f-bb41-a20ad7696804",
+        "graduate_id": "f5e252d5-806e-4309-82ca-35d191c1d490",
+        "year": "2010",
+        "designation": "author",
+        "institution_id": "f0f0589d-ca8e-44f9-9b26-06e0be7a835e"
+      },
+      {
+        "id": "00012bfd-24b4-4339-9f8b-be11ffce2b02",
+        "graduate_id": "0213af01-3b64-4dab-a0eb-8084e58c471d",
+        "year": "2022",
+        "designation": "postdoctoral fellow at ucla",
+        "institution_id": "46c7225a-1fac-40b8-af48-54ff85953b3b"
+      },
+      {
+        "id": "000257c8-f67d-44d0-96f9-fc2040a64f43",
+        "graduate_id": "14740386-63e0-4a5f-bd9d-546da928b28e",
+        "year": "2019",
+        "designation": "assistant professor",
+        "institution_id": "ce495dc0-afac-45fe-87c7-31a26a496a6e"
+      },
+      {
+        "id": "0002dbed-e760-4d0e-8fbb-5230d6308f6d",
+        "graduate_id": "fc886908-8adf-413f-ada0-881f07c7973c",
+        "year": "2008",
+        "designation": "associate professor in electrical and computer engineering at university of delaware",
+        "institution_id": "fe7cfaf3-c546-4a3a-a554-f03e90c2215a"
+      }
+    ]
+  }
+}

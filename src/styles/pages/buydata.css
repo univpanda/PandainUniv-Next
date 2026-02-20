@@ -1,0 +1,472 @@
+/* ===== Buy Data Page Styles ===== */
+
+.buydata-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem 1.5rem;
+  font-family: inherit;
+}
+
+/* Sub-tabs Navigation */
+.buydata-container .buydata-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.5rem;
+}
+
+.buydata-container .buydata-tabs .buydata-tab {
+  appearance: none;
+  -webkit-appearance: none;
+  text-decoration: none;
+  outline: none;
+  padding: 0.35rem 0;
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid transparent;
+  font-size: var(--font-md);
+  font-weight: 500;
+  color: var(--color-text-secondary);
+  cursor: pointer;
+  transition:
+    color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.buydata-container .buydata-tabs .buydata-tab:hover {
+  color: var(--color-primary);
+}
+
+.buydata-container .buydata-tabs .buydata-tab.active {
+  color: var(--color-primary);
+  font-weight: 600;
+  border-bottom-color: var(--color-primary);
+}
+
+/* Stats Row */
+.buydata-stats-row {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.buydata-stat-card {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem 1.25rem;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  box-shadow: var(--shadow-xs);
+  color: var(--color-primary);
+}
+
+.buydata-stat-value {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--color-text);
+  line-height: 1.2;
+}
+
+.buydata-stat-label {
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+}
+
+/* Table Section */
+.buydata-table-section {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  box-shadow: var(--shadow-xs);
+  margin-bottom: 1.5rem;
+  overflow: hidden;
+}
+
+.buydata-table-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1.25rem;
+  border-bottom: 1px solid var(--color-border);
+  background: var(--color-bg-gray);
+}
+
+.buydata-table-title {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--color-primary);
+}
+
+.buydata-table-title h3 {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 600;
+  font-family: 'SF Mono', 'Fira Code', 'Fira Mono', monospace;
+  color: var(--color-text);
+}
+
+.buydata-stat-badge {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--color-primary);
+  background: var(--color-primary-lighter);
+  padding: 0.25rem 0.625rem;
+  border-radius: 999px;
+}
+
+/* Table */
+.buydata-table-wrapper {
+  overflow-x: auto;
+}
+
+.buydata-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.875rem;
+}
+
+.buydata-table th {
+  text-align: left;
+  padding: 0.625rem 1rem;
+  font-weight: 600;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--color-text-muted);
+  border-bottom: 1px solid var(--color-border);
+  background: var(--color-bg-gray);
+  white-space: nowrap;
+}
+
+.buydata-table td {
+  padding: 0.5rem 1rem;
+  border-bottom: 1px solid var(--color-border);
+  color: var(--color-text-secondary);
+  vertical-align: top;
+}
+
+.buydata-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.buydata-table tbody tr:hover {
+  background: var(--color-bg-gray);
+}
+
+.buydata-table code {
+  font-family: 'SF Mono', 'Fira Code', 'Fira Mono', monospace;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--color-text);
+  background: var(--color-primary-lighter);
+  padding: 0.125rem 0.375rem;
+  border-radius: 4px;
+}
+
+.buydata-type {
+  font-size: 0.75rem;
+  font-family: 'SF Mono', 'Fira Code', 'Fira Mono', monospace;
+  color: var(--color-text-muted);
+  background: var(--color-bg-gray);
+  padding: 0.125rem 0.375rem;
+  border-radius: 4px;
+  white-space: nowrap;
+}
+
+.buydata-sample {
+  font-size: 0.8rem;
+  font-family: 'SF Mono', 'Fira Code', 'Fira Mono', monospace;
+  color: var(--color-text-muted);
+  font-style: italic;
+}
+
+/* Payment Tab */
+.buydata-payment {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.buydata-terms-section {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  box-shadow: var(--shadow-xs);
+  overflow: hidden;
+  margin-bottom: 1.25rem;
+}
+
+.buydata-terms-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 1rem 1.25rem;
+  background: none;
+  border: none;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--color-text);
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.buydata-terms-toggle:hover {
+  background: var(--color-bg-gray);
+}
+
+.buydata-terms-content {
+  max-height: 320px;
+  overflow-y: auto;
+  padding: 0 1.25rem 1.25rem;
+  border-top: 1px solid var(--color-border);
+}
+
+.buydata-terms-pdf {
+  max-height: none;
+  height: 480px;
+  padding: 0;
+  overflow: hidden;
+}
+
+.buydata-terms-pdf iframe {
+  border: none;
+  display: block;
+}
+
+.buydata-terms-content h4 {
+  margin: 1rem 0 0.375rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.buydata-terms-content p {
+  margin: 0;
+  font-size: 0.825rem;
+  line-height: 1.6;
+  color: var(--color-text-secondary);
+}
+
+.buydata-terms-checkbox {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  padding: 0.75rem 0;
+  font-size: 0.875rem;
+  color: var(--color-text-secondary);
+  cursor: pointer;
+  user-select: none;
+}
+
+.buydata-terms-checkbox input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  accent-color: var(--color-primary);
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.buydata-payment-gateway {
+  margin-top: 1.25rem;
+  padding: 1.5rem;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  box-shadow: var(--shadow-xs);
+}
+
+.buydata-payment-gateway h3 {
+  margin: 0 0 0.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.buydata-payment-gateway p {
+  margin: 0 0 1.25rem;
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+  line-height: 1.5;
+}
+
+.buydata-pay-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: white;
+  background: var(--color-primary);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 0.15s, transform 0.1s;
+}
+
+.buydata-pay-button:hover {
+  background: var(--color-primary-hover);
+  transform: translateY(-1px);
+}
+
+/* Email Verification */
+.buydata-email-section {
+  margin-top: 1.25rem;
+}
+
+.buydata-email-label {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--color-text);
+  margin-bottom: 0.5rem;
+}
+
+.buydata-email-row {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.buydata-email-input {
+  flex: 1;
+  padding: 0.625rem 0.875rem;
+  font-size: 0.875rem;
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  outline: none;
+  transition: border-color 0.15s;
+  font-family: inherit;
+}
+
+.buydata-email-input:focus {
+  border-color: var(--color-primary);
+}
+
+.buydata-email-input.error {
+  border-color: var(--color-danger-light);
+}
+
+.buydata-email-input.verified {
+  border-color: var(--color-success);
+}
+
+.buydata-email-verify {
+  padding: 0.625rem 1.25rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: white;
+  background: var(--color-primary);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.15s;
+  white-space: nowrap;
+  font-family: inherit;
+}
+
+.buydata-email-verify:hover {
+  background: var(--color-primary-hover);
+}
+
+.buydata-email-error {
+  margin: 0.375rem 0 0;
+  font-size: 0.8rem;
+  color: var(--color-danger-light);
+}
+
+/* Data Example Tab */
+.buydata-example-note {
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+  margin: 0 0 1.5rem;
+  line-height: 1.5;
+}
+
+/* Distribution Bars */
+.buydata-dist-container {
+  padding: 1rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.375rem;
+}
+
+.buydata-dist-row {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.buydata-dist-label {
+  font-size: 0.8rem;
+  font-family: 'SF Mono', 'Fira Code', 'Fira Mono', monospace;
+  color: var(--color-text-secondary);
+  width: 280px;
+  text-align: right;
+  flex-shrink: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.buydata-dist-bar-bg {
+  flex: 1;
+  height: 16px;
+  background: var(--color-bg-gray);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.buydata-dist-bar-fill {
+  height: 100%;
+  background: var(--color-primary);
+  border-radius: 4px;
+  transition: width 0.3s ease;
+  min-width: 2px;
+}
+
+.buydata-dist-count {
+  font-size: 0.75rem;
+  font-family: 'SF Mono', 'Fira Code', 'Fira Mono', monospace;
+  color: var(--color-text-muted);
+  min-width: 50px;
+  text-align: right;
+  flex-shrink: 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .buydata-container {
+    padding: 1.5rem 1rem 1rem;
+  }
+
+  .buydata-stats-row {
+    flex-direction: column;
+  }
+
+  .buydata-table th,
+  .buydata-table td {
+    padding: 0.5rem 0.75rem;
+  }
+
+  .buydata-table-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .buydata-container .buydata-tabs {
+    gap: 1rem;
+  }
+
+  .buydata-container .buydata-tabs .buydata-tab {
+    font-size: 0.875rem;
+  }
+}

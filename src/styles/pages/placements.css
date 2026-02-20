@@ -1,0 +1,980 @@
+/* ===== Placements Page Styles ===== */
+/* Design inspired by PandainUniv phd-placement */
+
+/* Color variables for placements (matching PandainUniv theme) */
+.placements-container {
+  --placement-primary: var(--color-primary);
+  --placement-primary-hover: var(--color-primary-hover);
+  --placement-primary-light: var(--color-primary-lighter);
+  --placement-border: var(--color-border);
+  --placement-text: var(--color-text);
+  --placement-text-secondary: var(--color-text-secondary);
+  --placement-text-muted: #5b6b82;
+  --placement-bg: var(--color-surface);
+  --placement-bg-page: var(--color-background);
+}
+
+.placements-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem 1.5rem;
+  font-family: inherit;
+}
+
+.placements-container button,
+.placements-container input,
+.placements-container select,
+.placements-container textarea {
+  font-family: inherit;
+}
+
+.placements-loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 3rem;
+  color: var(--placement-text-muted);
+}
+
+/* Common Filters Card (Degree, Year Range) */
+.placements-container > .placement-filters {
+  background: var(--placement-bg);
+  border: 1px solid var(--placement-border);
+  border-radius: 12px;
+  box-shadow: var(--shadow-xs);
+  padding: 1.5rem;
+  padding-left: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Sub-tabs Navigation - Centered, standalone */
+.placements-container .placements-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.5rem;
+}
+
+.placements-container .placements-tabs .placements-tab {
+  appearance: none;
+  -webkit-appearance: none;
+  text-decoration: none;
+  outline: none;
+  padding: 0.35rem 0;
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid transparent;
+  font-size: var(--font-md);
+  font-weight: 500;
+  color: var(--placement-text-secondary);
+  cursor: pointer;
+  transition:
+    color 0.2s ease,
+    border-color 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.placements-container .placements-tabs .placements-tab:hover {
+  color: var(--placement-primary);
+}
+
+.placements-container .placements-tabs .placements-tab.active {
+  color: var(--placement-primary);
+  font-weight: 600;
+  border-bottom-color: var(--placement-primary);
+}
+
+/* Tab Content */
+.placements-content {
+  /* No padding - content handles its own spacing */
+}
+
+/* Tab-specific filters - with Paper style */
+.placement-search .placement-filters,
+.placement-compare .placement-filters,
+.placement-reverse .placement-filters {
+  background: var(--placement-bg);
+  border: 1px solid var(--placement-border);
+  border-radius: 12px;
+  box-shadow: var(--shadow-xs);
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+/* Filters Section */
+.placement-filters {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.filter-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.filter-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  min-width: 200px;
+  flex: 1;
+}
+
+.filter-group label {
+  font-size: var(--font-xs);
+  font-weight: 600;
+  color: var(--placement-text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.filter-input {
+  padding: 0.875rem 1rem;
+  border: 1px solid var(--placement-border);
+  border-radius: 8px;
+  font-size: var(--font-md);
+  font-weight: 500;
+  background: var(--placement-bg);
+  transition: border-color 0.2s ease;
+  min-height: 48px;
+}
+
+.filter-input:focus {
+  outline: none;
+  border: 2px solid var(--placement-primary);
+  box-shadow: var(--shadow-focus);
+}
+
+.filter-input::placeholder {
+  color: var(--placement-text-muted);
+  font-weight: 400;
+}
+
+/* Custom Select Component */
+.filter-select {
+  position: relative;
+}
+
+.filter-select-trigger {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0.875rem 1rem;
+  border: 1px solid var(--placement-border);
+  border-radius: 8px;
+  background: var(--placement-bg);
+  font-size: var(--font-md);
+  font-weight: 500;
+  color: var(--placement-text);
+  cursor: pointer;
+  transition: border-color 0.2s ease;
+  text-align: left;
+  min-height: 48px;
+}
+
+.filter-select-trigger:disabled {
+  background: var(--color-bg-gray);
+  color: var(--placement-text-muted);
+  cursor: not-allowed;
+}
+
+.filter-select-trigger:disabled svg {
+  color: var(--placement-text-muted);
+}
+
+.filter-select-trigger:hover {
+  border-color: var(--color-border-dark);
+}
+
+.filter-select-trigger:focus {
+  outline: none;
+  border: 2px solid var(--placement-primary);
+  box-shadow: var(--shadow-focus);
+}
+
+.filter-select-trigger .placeholder {
+  color: var(--placement-text-muted);
+  font-weight: 400;
+}
+
+.filter-select-trigger svg {
+  flex-shrink: 0;
+  color: var(--placement-text-secondary);
+  transition: transform 0.2s;
+}
+
+.filter-select-trigger svg.rotated {
+  transform: rotate(180deg);
+}
+
+.filter-select-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 99;
+}
+
+.filter-select-dropdown {
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 0;
+  right: 0;
+  background: var(--placement-bg);
+  border: 1px solid var(--placement-border);
+  border-radius: 8px;
+  box-shadow: var(--shadow-md);
+  z-index: 100;
+  max-height: 300px;
+  display: flex;
+  flex-direction: column;
+}
+
+.filter-select-search {
+  padding: 0.875rem 1rem;
+  border: none;
+  border-bottom: 1px solid var(--placement-border);
+  font-size: var(--font-md);
+  outline: none;
+}
+
+.filter-select-search::placeholder {
+  color: var(--placement-text-muted);
+}
+
+.filter-select-options {
+  overflow-y: auto;
+  max-height: 240px;
+  padding: 4px;
+}
+
+.filter-select-option {
+  display: block;
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: none;
+  background: none;
+  text-align: left;
+  font-size: var(--font-md);
+  color: var(--placement-text);
+  cursor: pointer;
+  transition: background 0.15s;
+  border-radius: 4px;
+}
+
+.filter-select-option:hover {
+  background: var(--placement-primary-light);
+}
+
+.filter-select-option.selected {
+  background: var(--placement-primary);
+  color: white;
+  font-weight: 500;
+}
+
+.filter-select-option.clear {
+  color: var(--placement-text-muted);
+  font-style: italic;
+  border-bottom: 1px solid var(--placement-border);
+  border-radius: 0;
+  margin-bottom: 4px;
+}
+
+.filter-select-empty {
+  padding: 1rem;
+  text-align: center;
+  color: var(--placement-text-muted);
+  font-size: 0.875rem;
+}
+
+/* Filter Actions */
+.filter-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  justify-content: flex-end;
+}
+
+/* Button Styles - matching PandainUniv */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 2rem;
+  background: var(--placement-primary);
+  border: none;
+  border-radius: 8px;
+  font-size: var(--font-md);
+  font-weight: 600;
+  color: white;
+  cursor: pointer;
+  transition: background 0.2s ease;
+  min-width: 120px;
+  box-shadow: var(--shadow-primary-sm);
+}
+
+.btn-primary:hover:not(:disabled) {
+  background: var(--placement-primary-hover);
+}
+
+.btn-primary:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 2rem;
+  background: transparent;
+  border: 1px solid var(--placement-primary);
+  border-radius: 8px;
+  font-size: var(--font-md);
+  font-weight: 600;
+  color: var(--placement-primary);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  min-width: 120px;
+}
+
+.btn-secondary:hover:not(:disabled) {
+  background: var(--placement-primary-light);
+}
+
+.btn-secondary:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.btn-small {
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+  min-width: auto;
+}
+
+.btn-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  background: none;
+  border: 1px solid var(--placement-border);
+  border-radius: 6px;
+  color: var(--placement-text-secondary);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-icon:hover {
+  background: var(--color-danger-bg-dark);
+  border-color: var(--color-danger-light);
+  color: var(--color-danger-light);
+}
+
+/* Results Section */
+.placement-results {
+  margin-top: 1.5rem;
+}
+
+.program-notes {
+  background: #fff8e1;
+  border: 1px solid #ffe082;
+  border-radius: 6px;
+  padding: 0.6rem 0.9rem;
+  margin-bottom: 0.75rem;
+  font-size: 0.825rem;
+  color: #5d4037;
+  line-height: 1.45;
+}
+
+.results-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+}
+
+.results-count {
+  font-size: 0.875rem;
+  color: var(--placement-text-secondary);
+}
+
+.results-header-right {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-left: auto;
+}
+
+.results-program-filter {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.results-program-filter label {
+  font-size: 0.75rem;
+  color: var(--placement-text-secondary);
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.results-program-filter .filter-input {
+  min-width: 220px;
+  height: 34px;
+  min-height: 34px;
+  padding: 0 0.625rem;
+}
+
+.results-filter-note {
+  margin-top: 0.5rem;
+  font-size: 0.75rem;
+  color: var(--placement-text-muted);
+}
+
+.academic-pct {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--placement-text-secondary);
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  flex-wrap: wrap;
+}
+
+.inline-program-filter {
+  display: inline;
+  padding: 0.25rem 0.5rem;
+  height: auto;
+  min-height: auto;
+  min-width: 120px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  border-radius: 4px;
+}
+
+.fetching-indicator {
+  font-size: 0.75rem;
+  color: var(--placement-primary);
+  font-weight: 500;
+}
+
+.placements-container .no-results {
+  text-align: center;
+  padding: 3rem 2rem;
+  color: var(--placement-text-muted);
+  font-size: 1rem;
+  background: transparent;
+  border: none;
+  border-radius: 0;
+}
+
+/* Placement Table */
+.placement-table-wrapper {
+  background: var(--placement-bg);
+  border: 1px solid var(--placement-border);
+  border-radius: 12px;
+  overflow: auto;
+  box-shadow: var(--shadow-xs);
+}
+
+.placement-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.875rem;
+  min-width: 600px;
+}
+
+.placement-table th,
+.placement-table td {
+  padding: 0.875rem 1rem;
+  text-align: center;
+  border-bottom: 1px solid var(--placement-border);
+}
+
+.placement-table th {
+  background: var(--color-bg-light);
+  font-weight: 600;
+  color: var(--placement-text-secondary);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+}
+
+.placement-table tbody tr:hover {
+  background: var(--placement-primary-light);
+}
+
+.placement-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* Mobile card view - hidden by default, shown on mobile */
+.placement-mobile.placement-cards {
+  display: none;
+}
+
+.placement-card {
+  background: var(--placement-bg);
+  border: 1px solid var(--placement-border);
+  border-radius: 10px;
+  padding: 0.875rem 1rem;
+}
+
+.placement-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.375rem;
+}
+
+.placement-card-name {
+  font-weight: 600;
+  color: var(--placement-text);
+  font-size: 0.9rem;
+}
+
+.placement-card-year {
+  font-size: 0.8rem;
+  color: var(--placement-text-secondary);
+  background: var(--color-bg-light);
+  padding: 0.125rem 0.5rem;
+  border-radius: 4px;
+}
+
+.placement-card-placement {
+  color: var(--placement-primary);
+  font-weight: 500;
+  font-size: 0.85rem;
+  margin-bottom: 0.25rem;
+}
+
+.placement-card-role {
+  font-size: 0.8rem;
+  color: var(--placement-text-secondary);
+}
+
+.placement-card-meta {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-top: 0.5rem;
+  padding-top: 0.5rem;
+  border-top: 1px solid var(--placement-border);
+  font-size: 0.75rem;
+  color: var(--placement-text-muted);
+}
+
+.placement-card-program,
+.placement-card-university {
+  background: var(--color-bg-light);
+  padding: 0.125rem 0.5rem;
+  border-radius: 4px;
+}
+
+/* Compare Tab */
+.compare-universities {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.compare-universities > label {
+  font-size: var(--font-xs);
+  font-weight: 600;
+  color: var(--placement-text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.compare-selects {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.compare-select-row {
+  display: flex;
+  gap: 0.75rem;
+  align-items: flex-start;
+}
+
+.compare-select-row .filter-group {
+  flex: 1;
+  min-width: 0;
+}
+
+/* Comparison Results - Side by Side Layout */
+.comparison-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.comparison-global-summary {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.comparison-global-header {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
+  border: 1px solid var(--placement-border);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: var(--shadow-xs);
+  background: var(--placement-border);
+}
+
+.comparison-global-label {
+  background: var(--placement-primary-light);
+  padding: 0.75rem 1rem;
+  text-align: center;
+  font-weight: 600;
+  font-size: 0.875rem;
+  color: var(--placement-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
+.comparison-global-meta {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
+  border: 1px solid var(--placement-border);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: var(--shadow-xs);
+  background: var(--placement-border);
+}
+
+.comparison-global-meta-item {
+  background: var(--placement-bg);
+  padding: 0.625rem 1rem;
+  text-align: center;
+  font-size: 0.875rem;
+  color: var(--placement-text-secondary);
+}
+
+.comparison-year-section {
+  background: var(--placement-bg);
+  border: 1px solid var(--placement-border);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: var(--shadow-xs);
+}
+
+.comparison-year-header {
+  background: var(--color-bg-light);
+  padding: 0.75rem 1rem;
+  font-size: 1.125rem;
+  font-weight: 600;
+  text-align: center;
+  color: var(--placement-text);
+  border-bottom: 1px solid var(--placement-border);
+}
+
+.comparison-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.comparison-column {
+  padding: 1rem;
+  border-right: 1px solid var(--placement-border);
+}
+
+.comparison-column:last-child {
+  border-right: none;
+}
+
+.comparison-count {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+  background: var(--color-bg-light);
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.comparison-count .count-number {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--placement-text);
+}
+
+.comparison-count .count-label {
+  font-size: 0.75rem;
+  color: var(--placement-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.comparison-institutions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.institution-row {
+  background: var(--color-bg-light);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.institution-name {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 0.75rem 1rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--placement-text);
+  text-transform: uppercase;
+  cursor: pointer;
+  background: none;
+  border: none;
+  text-align: left;
+}
+
+.institution-name:hover {
+  background: var(--placement-primary-light);
+}
+
+.expand-icon {
+  font-size: 1.25rem;
+  font-weight: 300;
+  color: var(--placement-text-muted);
+  transition: transform 0.2s ease;
+}
+
+.expand-icon.expanded {
+  transform: rotate(45deg);
+}
+
+.institution-details {
+  padding: 0 1rem 0.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.placement-detail {
+  font-size: 0.8125rem;
+  color: var(--placement-text-secondary);
+  padding-left: 0.5rem;
+  border-left: 2px solid var(--placement-primary);
+}
+
+.no-placements {
+  text-align: center;
+  color: var(--placement-text-muted);
+  font-size: 0.875rem;
+  padding: 1rem;
+}
+
+/* Reverse Search */
+.reverse-description {
+  font-size: 0.875rem;
+  color: var(--placement-text-secondary);
+  margin-bottom: 1rem;
+}
+
+/* Pagination */
+.placements-container .pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1.5rem;
+  padding: 1rem;
+  border: none;
+}
+
+.placements-container .results-top-pagination .pagination,
+.placements-container .reverse-top-pagination .pagination {
+  margin: 0;
+  padding: 0;
+  justify-content: flex-end;
+}
+
+.placements-container .page-info {
+  font-size: 0.875rem;
+  color: var(--placement-text-secondary);
+  padding: 0 0.5rem;
+}
+
+/* Responsive - Tablet */
+@media (max-width: 1024px) {
+  /* Search and Reverse Search filters stack vertically on tablet/mobile */
+  .placement-search .placement-filters > .filter-row,
+  .placement-reverse .placement-filters > .filter-row {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .placement-search .placement-filters > .filter-row > .filter-group,
+  .placement-reverse .placement-filters > .filter-row > .filter-group {
+    flex: none;
+    width: 100%;
+    min-width: 0;
+  }
+}
+
+/* Responsive - Mobile */
+@media (max-width: 768px) {
+  .placements-container {
+    padding: 1rem;
+  }
+
+  .placements-container > .placement-filters,
+  .placement-search .placement-filters,
+  .placement-compare .placement-filters,
+  .placement-reverse .placement-filters {
+    padding: 1rem;
+  }
+
+  /* Common filters (PhD, Start Year, End Year) stay in one row on mobile */
+  .common-filters .filter-row {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 0.5rem;
+  }
+
+  /* Common filters share space equally on mobile */
+  .common-filters .filter-group {
+    flex: 1 1 0;
+    min-width: 0;
+  }
+
+  /* Make dropdowns smaller on mobile */
+  .common-filters .filter-select-trigger {
+    padding: 0.625rem 0.5rem;
+    font-size: 0.875rem;
+    min-height: 40px;
+  }
+
+  /* Add better visual separation for common filters on mobile */
+  .common-filters {
+    margin-bottom: 2rem;
+  }
+
+  /* Compare filter row stays horizontal */
+  .placement-compare .filter-row {
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .placement-compare .filter-group {
+    flex: 1 1 auto;
+    min-width: 80px;
+  }
+
+  .placements-container .placements-tabs {
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .placements-container .placements-tabs .placements-tab {
+    padding: 0.625rem 1rem;
+    font-size: 0.875rem;
+  }
+
+  .placement-table-wrapper,
+  .comparison-wrapper {
+    margin: 0 -1rem;
+    border-radius: 0;
+    border-left: none;
+    border-right: none;
+  }
+
+  .comparison-cell {
+    min-width: 150px;
+  }
+
+  .filter-actions {
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .btn-primary,
+  .btn-secondary {
+    flex: 1;
+    min-width: 100px;
+  }
+
+  .compare-select-row {
+    flex-wrap: wrap;
+  }
+
+  .compare-select-row .filter-group {
+    flex: 1 1 45%;
+    min-width: 120px;
+  }
+
+  .comparison-global-header {
+    grid-template-columns: 1fr;
+  }
+
+  .comparison-global-meta {
+    grid-template-columns: 1fr;
+  }
+
+  /* Show card view, hide table view on mobile */
+  .placement-desktop {
+    display: none;
+  }
+
+  .placement-mobile.placement-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .placements-container .placements-tabs .placements-tab span {
+    display: none;
+  }
+
+  .placements-container .placements-tabs .placements-tab {
+    padding: 0.75rem;
+  }
+
+  .placements-container .pagination {
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .placements-container .page-info {
+    width: 100%;
+    text-align: center;
+    order: -1;
+    margin-bottom: 0.5rem;
+  }
+
+  .comparison-cell.year-cell {
+    flex: 0 0 70px;
+    min-width: 70px;
+    font-size: 0.75rem;
+  }
+
+  .comparison-cell {
+    min-width: 120px;
+    padding: 0.625rem 0.5rem;
+  }
+}

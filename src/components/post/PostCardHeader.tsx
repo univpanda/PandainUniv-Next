@@ -1,0 +1,143 @@
+import { memo } from 'react'
+import { AlertCircle, Trash2, Undo2, User, Edit2 } from 'lucide-react'
+import type { Post } from '../../types'
+import { formatDate, formatDateTimeAbsolute, getAvatarUrl, canEditContent } from '../../utils/format'
+
+// Avatar is rendered:
+// - In PostCardHeader for original posts (inline with name, full-width content below)
+// - In PostCard avatar-col for replies (two-column layout)
+import { UserNameHover } from '../UserNameHover'
+
+interface PostCardHeaderProps {
+  post: Post
+  isOriginal: boolean
+  showAvatar?: boolean // Show avatar in header (true when flat layout, false when two-column)
+  isDeleted: boolean
+  isUserDeleted: boolean
+  isOwner: boolean
+  isAdmin: boolean
+  user: { id: string } | null
+  onEdit?: (post: Post, e: React.MouseEvent) => void
+  onDelete?: (post: Post, e: React.MouseEvent) => void
+  onToggleFlagged?: (post: Post, e: React.MouseEvent) => void
+  onUserDeletedClick?: (e: React.MouseEvent) => void
+  isFlagPending?: boolean
+}
+
+export const PostCardHeader = memo(function PostCardHeader({
+  post,
+  isOriginal,
+  showAvatar,
+  isDeleted,
+  isUserDeleted,
+  isOwner,
+  isAdmin,
+  user,
+  onEdit,
+  onDelete,
+  onToggleFlagged,
+  onUserDeletedClick,
+  isFlagPending = false,
+}: PostCardHeaderProps) {
+  const canEdit = canEditContent(post.created_at)
+  const authorName = post.author_name || 'Private Panda'
+
+  return (
+    <div className="post-header">
+      <div className="post-author">
+        <UserNameHover
+          userId={post.author_id}
+          username={post.author_name ?? 'Private Panda'}
+          avatar={post.author_avatar}
+          avatarPath={post.author_avatar_path}
+          currentUserId={user?.id || null}
+        >
+          {(showAvatar ?? isOriginal) && (
+            <img
+              src={getAvatarUrl(post.author_avatar, authorName, post.author_avatar_path)}
+              alt=""
+              className="avatar-small"
+            />
+          )}
+          <span className="author-name">{authorName}</span>
+        </UserNameHover>
+        <span className="post-date">
+          {isOriginal ? formatDateTimeAbsolute(post.created_at) : formatDate(post.created_at)}
+        </span>
+        {/* Edit button - next to time */}
+        {!isDeleted && isOwner && onEdit && (isOriginal || canEdit) && (
+          <button
+            className="edit-btn"
+            onClick={(e) => {
+              e.stopPropagation()
+              onEdit(post, e)
+            }}
+            title={canEdit ? 'Edit post' : 'Add additional comments'}
+          >
+            <Edit2 size={14} />
+          </button>
+        )}
+      </div>
+      <div className="post-header-actions">
+        {isAdmin && onToggleFlagged && (
+          <button
+            className={`flag-indicator ${post.is_flagged ? 'flagged' : ''}`}
+            onClick={(e) => {
+              e.stopPropagation()
+              onToggleFlagged(post, e)
+            }}
+            disabled={isFlagPending}
+            title={
+              post.is_flagged
+                ? `Flagged: ${post.flag_reason} (click to unflag)`
+                : 'Click to flag this post'
+            }
+          >
+            <AlertCircle size={14} />
+          </button>
+        )}
+        {/* Delete button */}
+        {!isDeleted && (isOwner || isAdmin) && onDelete && (
+          <button
+            className="delete-btn"
+            onClick={(e) => {
+              e.stopPropagation()
+              onDelete(post, e)
+            }}
+            title="Delete post"
+            aria-label="Delete post"
+          >
+            <Trash2 size={14} />
+          </button>
+        )}
+        {/* Undelete button for admin on admin-deleted posts only */}
+        {isDeleted && isAdmin && !isUserDeleted && onDelete && (
+          <button
+            className="undelete-btn"
+            onClick={(e) => {
+              e.stopPropagation()
+              onDelete(post, e)
+            }}
+            title="Restore post"
+            aria-label="Restore post"
+          >
+            <Undo2 size={14} />
+          </button>
+        )}
+        {/* User icon indicator for user-deleted posts (admin view) */}
+        {isDeleted && isAdmin && isUserDeleted && (
+          <button
+            className="user-deleted-indicator"
+            title="Deleted by user"
+            onClick={(e) => {
+              e.stopPropagation()
+              onUserDeletedClick?.(e)
+            }}
+          >
+            <User size={14} />
+          </button>
+        )}
+      </div>
+    </div>
+  )
+})

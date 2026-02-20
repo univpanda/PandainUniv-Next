@@ -1,0 +1,6 @@
+/* Forum styles split by concern. Keep import order stable for cascade behavior. */
+@import './forum-toolbar.css';
+@import './forum-threads.css';
+@import './forum-posts.css';
+@import './forum-responsive.css';
+@import './forum-notifications.css';

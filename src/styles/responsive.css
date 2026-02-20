@@ -1,0 +1,194 @@
+/* Responsive */
+@media (max-width: 768px) {
+  .header {
+    height: var(--mobile-header-height);
+    padding: 0.5rem 1rem;
+  }
+
+  .header-content {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 0.5rem;
+    align-items: center;
+    height: 100%;
+  }
+
+  .filters {
+    flex-direction: column;
+  }
+
+  .pagination {
+    gap: 0.75rem;
+  }
+
+  .pagination-info {
+    font-size: 0.8rem;
+  }
+
+  .filter-results {
+    justify-content: center;
+  }
+
+  .header-right {
+    flex-direction: row;
+    gap: 0.5rem;
+    justify-content: flex-end;
+  }
+
+  .header-utilities {
+    flex: 1 1 auto;
+    min-width: 0;
+    width: auto;
+    justify-content: center;
+  }
+
+  .logo-image {
+    width: 40px;
+    height: 40px;
+  }
+
+  .auth-avatar {
+    width: 36px;
+    height: 36px;
+  }
+
+  .header-logo {
+    padding-left: 0;
+  }
+
+  .auth-name {
+    display: none;
+  }
+
+  /* Mobile: avatar-only user button (remove the empty background pill) */
+  .auth-button.auth-user {
+    width: 36px;
+    justify-content: center;
+    padding: 0;
+    gap: 0;
+    background: transparent;
+    border: none;
+  }
+
+  .auth-button.auth-user:hover {
+    background: transparent;
+  }
+
+  /* Standardize header element heights on mobile - all 36px */
+  .logo-text h1 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    width: 36px;
+    height: 36px;
+    line-height: 36px;
+    text-align: center;
+  }
+
+  .auth-button {
+    padding: 0.375rem 0.5rem;
+    height: 36px;
+  }
+
+  /* Header sign-in button: icon only on mobile */
+  .header-right .auth-sign-in span {
+    display: none;
+  }
+
+  .header-right .auth-sign-in {
+    width: 36px;
+    justify-content: center;
+  }
+
+  .auth-avatar {
+    width: 26px;
+    height: 26px;
+  }
+
+  .page-btn,
+  .page-number {
+    width: 34px;
+    min-width: 34px;
+    height: 34px;
+  }
+
+  .page-btn svg {
+    width: 17px;
+    height: 17px;
+  }
+
+  .page-numbers .page-number:not(.active),
+  .page-numbers .page-ellipsis {
+    display: none;
+  }
+
+  .sign-in-prompt .sign-in-text-full {
+    display: none;
+  }
+
+  .sign-in-prompt .sign-in-text-short {
+    display: inline;
+    white-space: nowrap;
+    font-size: 0.85rem;
+  }
+
+  .sign-in-prompt .auth-sign-in {
+    width: auto;
+    padding: 0.375rem 0.625rem;
+    gap: 0.35rem;
+  }
+
+  .header-tabs {
+    max-width: 100%;
+    margin: 0 0.5rem;
+  }
+
+  .header-tabs-pill {
+    padding: 0.3rem;
+  }
+
+  .header-tab {
+    font-size: 0.85rem;
+  }
+
+
+  /* Bookmarks buttons - icons only on mobile */
+  .bookmarks-btn .btn-text {
+    display: none;
+  }
+
+  .bookmarks-btn {
+    padding: 0.625rem;
+  }
+
+  .footer {
+    padding: 0.75rem 1rem;
+  }
+
+  .footer-content {
+    gap: 1rem;
+  }
+
+  .footer-right {
+    gap: 1rem;
+  }
+
+  .footer-social {
+    gap: 0.75rem;
+  }
+
+  .footer-social-text {
+    display: none;
+  }
+
+  /* Hide search help icon on mobile */
+  .search-help-wrapper {
+    display: none;
+  }
+}
+
+@media (max-width: 1200px) {
+  .header-tab-label {
+    display: none;
+  }
+}

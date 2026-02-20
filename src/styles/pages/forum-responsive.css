@@ -1,0 +1,101 @@
+/* Forum responsive adjustments */
+@media (max-width: 768px) {
+  .discussion-container {
+    flex-direction: column;
+    padding: 1rem;
+  }
+
+  .discussion-sidebar {
+    width: 100%;
+    position: static;
+  }
+
+  .discussion-header {
+    gap: 1rem;
+  }
+
+  /* Toolbar: keep everything in one row */
+  .discussion-toolbar-row {
+    flex-wrap: nowrap;
+    gap: 0.5rem;
+    justify-content: space-between;
+  }
+
+  .discussion-toolbar-right {
+    margin-left: auto;
+    flex-shrink: 0;
+  }
+
+  /* Take a bite button: icon only on mobile */
+  .take-bite-btn {
+    padding: 0.5rem;
+    gap: 0;
+    flex-shrink: 0;
+  }
+
+  .take-bite-btn span {
+    display: none;
+  }
+
+  /* Standardize toolbar controls to 36px height */
+  .discussion-toolbar-left .sort-select {
+    font-size: 0.8rem;
+    min-width: 90px;
+    height: 36px;
+    padding: 0 1.75rem 0 0.5rem;
+  }
+
+  .discussion-toolbar-left .sort-select-icon {
+    right: 0.5rem;
+  }
+
+  .discussion-search-row .grove-search.search-box {
+    height: 36px;
+    padding: 0 0.5rem;
+  }
+
+  .discussion-header h2 {
+    order: 2;
+    width: 100%;
+    margin-top: 0.5rem;
+    font-size: 1.1rem;
+  }
+
+  .discussion-search-row {
+    gap: 0.5rem;
+  }
+
+  .discussion-search-row .search-input-with-help .grove-search.search-box {
+    width: 100%;
+  }
+
+  .post-avatar-col .avatar-small {
+    width: 32px;
+    height: 32px;
+  }
+
+  .thread-card {
+    padding: 1rem;
+  }
+
+  .notifications-container {
+    padding: 1rem;
+  }
+
+  .notification-badges {
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 480px) {
+  .discussion-toolbar-left .sort-select {
+    font-size: 0.75rem;
+    min-width: 70px;
+    height: 36px;
+    padding: 0 1.5rem 0 0.4rem;
+  }
+
+  .discussion-toolbar-left .sort-select-icon {
+    right: 0.3rem;
+  }
+}
