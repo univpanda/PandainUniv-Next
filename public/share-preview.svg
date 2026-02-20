@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">PandaInUniv Share Preview</title>
+  <desc id="desc">Academic placement and discussion platform</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0f172a" />
+      <stop offset="100%" stop-color="#1d4ed8" />
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)" />
+  <rect x="72" y="72" width="1056" height="486" rx="24" fill="rgba(255,255,255,0.08)" />
+  <text x="120" y="250" fill="#ffffff" font-size="64" font-family="Inter, Arial, sans-serif" font-weight="700">
+    PandaInUniv
+  </text>
+  <text x="120" y="320" fill="#dbeafe" font-size="36" font-family="Inter, Arial, sans-serif" font-weight="500">
+    Bringing Transparency to Academia
+  </text>
+  <text x="120" y="400" fill="#bfdbfe" font-size="28" font-family="Inter, Arial, sans-serif">
+    Placements, discussions, and academic insights
+  </text>
+</svg>
