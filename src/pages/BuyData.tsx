@@ -491,7 +491,7 @@ function PaymentTab() {
   )
 }
 
-export function BuyData({}: BuyDataProps) {
+export function BuyData({ isActive = true }: BuyDataProps) {
   const [subTab, setSubTab] = useState<BuyDataSubTab>('description')
 
   return (

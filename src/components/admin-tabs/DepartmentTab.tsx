@@ -9,10 +9,10 @@ import {
   useUpdateDepartment,
 } from '../../hooks/usePlacementQueries'
 import { useToast } from '../../contexts/ToastContext'
-import { SearchInput } from '../../components/ui'
-import { InlineEditCell } from '../../components/admin/InlineEditCell'
-import { InlineRowActionCell } from '../../components/admin/InlineRowActionCell'
-import { AdminPagination } from '../../components/admin/AdminPagination'
+import { SearchInput } from '../ui'
+import { InlineEditCell } from '../admin/InlineEditCell'
+import { InlineRowActionCell } from '../admin/InlineRowActionCell'
+import { AdminPagination } from '../admin/AdminPagination'
 import { DEPARTMENTS_PER_PAGE, type DepartmentSortColumn, type DepartmentTabProps } from './types'
 
 interface EditingDepartment {
@@ -560,5 +560,3 @@ export function DepartmentTab({ state, setState }: DepartmentTabProps) {
     </div>
   )
 }
-
-export default DepartmentTab

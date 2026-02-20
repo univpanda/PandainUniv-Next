@@ -7,9 +7,9 @@ import {
   useUpdateCountry,
 } from '../../hooks/usePlacementQueries'
 import { useToast } from '../../contexts/ToastContext'
-import { SearchInput } from '../../components/ui'
-import { InlineEditCell } from '../../components/admin/InlineEditCell'
-import { AdminPagination } from '../../components/admin/AdminPagination'
+import { SearchInput } from '../ui'
+import { InlineEditCell } from '../admin/InlineEditCell'
+import { AdminPagination } from '../admin/AdminPagination'
 import { COUNTRIES_PER_PAGE, type CountrySortColumn, type CountryTabProps } from './types'
 
 interface EditingCountry {
@@ -410,5 +410,3 @@ export function CountryTab({ state, setState }: CountryTabProps) {
     </div>
   )
 }
-
-export default CountryTab

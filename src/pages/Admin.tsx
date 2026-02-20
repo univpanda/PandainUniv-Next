@@ -1,9 +1,9 @@
 import { useState } from 'react'
 import { UserManagement } from './UserManagement'
-import { CountryTab } from './admin/CountryTab'
-import { UniversityTab } from './admin/UniversityTab'
-import { SchoolTab } from './admin/SchoolTab'
-import { DepartmentTab } from './admin/DepartmentTab'
+import { CountryTab } from '../components/admin-tabs/CountryTab'
+import { UniversityTab } from '../components/admin-tabs/UniversityTab'
+import { SchoolTab } from '../components/admin-tabs/SchoolTab'
+import { DepartmentTab } from '../components/admin-tabs/DepartmentTab'
 import type {
   AdminProps,
   AdminSubTab,
@@ -11,7 +11,7 @@ import type {
   DepartmentTabState,
   SchoolTabState,
   UniversityTabState,
-} from './admin/types'
+} from '../components/admin-tabs/types'
 
 export function Admin({ isActive = true }: AdminProps) {
   const [subTab, setSubTab] = useState<AdminSubTab>('pandas')

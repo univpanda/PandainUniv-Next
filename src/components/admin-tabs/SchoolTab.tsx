@@ -9,10 +9,10 @@ import {
 } from '../../hooks/usePlacementQueries'
 import type { SchoolType } from '../../hooks/placements'
 import { useToast } from '../../contexts/ToastContext'
-import { SearchInput } from '../../components/ui'
-import { InlineEditCell } from '../../components/admin/InlineEditCell'
-import { InlineRowActionCell } from '../../components/admin/InlineRowActionCell'
-import { AdminPagination } from '../../components/admin/AdminPagination'
+import { SearchInput } from '../ui'
+import { InlineEditCell } from '../admin/InlineEditCell'
+import { InlineRowActionCell } from '../admin/InlineRowActionCell'
+import { AdminPagination } from '../admin/AdminPagination'
 import {
   SCHOOL_TYPE_OPTIONS,
   SCHOOLS_PER_PAGE,
@@ -536,5 +536,3 @@ export function SchoolTab({ state, setState }: SchoolTabProps) {
     </div>
   )
 }
-
-export default SchoolTab

@@ -8,10 +8,10 @@ import {
   useUpdateUniversity,
 } from '../../hooks/usePlacementQueries'
 import { useToast } from '../../contexts/ToastContext'
-import { SearchInput } from '../../components/ui'
-import { InlineEditCell } from '../../components/admin/InlineEditCell'
-import { InlineRowActionCell } from '../../components/admin/InlineRowActionCell'
-import { AdminPagination } from '../../components/admin/AdminPagination'
+import { SearchInput } from '../ui'
+import { InlineEditCell } from '../admin/InlineEditCell'
+import { InlineRowActionCell } from '../admin/InlineRowActionCell'
+import { AdminPagination } from '../admin/AdminPagination'
 import { UNIVERSITIES_PER_PAGE, type UniversitySortColumn, type UniversityTabProps } from './types'
 
 interface EditingUniversity {
@@ -502,5 +502,3 @@ export function UniversityTab({ state, setState }: UniversityTabProps) {
     </div>
   )
 }
-
-export default UniversityTab
