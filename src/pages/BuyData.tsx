@@ -1,5 +1,14 @@
 import { useState } from 'react'
-import { Database, GraduationCap, Briefcase, Building2, ChevronDown, ChevronUp, ExternalLink, Table } from 'lucide-react'
+import {
+  Database,
+  GraduationCap,
+  Briefcase,
+  Building2,
+  ChevronDown,
+  ChevronUp,
+  ExternalLink,
+  Table,
+} from 'lucide-react'
 import sampleData from '../data/buydata_sample.json'
 
 // Replace with your actual Dodo Payments product ID
@@ -13,36 +22,131 @@ interface BuyDataProps {
 }
 
 const INSTITUTION_COLUMNS = [
-  { name: 'id', type: 'text', description: 'Unique identifier for each institution', sample: 'stanford' },
-  { name: 'english_name', type: 'text', description: 'Official English name of the institution', sample: 'Stanford University' },
-  { name: 'country', type: 'text', description: 'Country where the institution is located', sample: 'United States' },
+  {
+    name: 'id',
+    type: 'text',
+    description: 'Unique identifier for each institution',
+    sample: 'stanford',
+  },
+  {
+    name: 'english_name',
+    type: 'text',
+    description: 'Official English name of the institution',
+    sample: 'Stanford University',
+  },
+  {
+    name: 'country',
+    type: 'text',
+    description: 'Country where the institution is located',
+    sample: 'United States',
+  },
 ]
 
 const GRADUATE_COLUMNS = [
-  { name: 'id', type: 'uuid', description: 'Unique identifier for each graduate', sample: '3a1f8c2e-...' },
-  { name: 'name', type: 'text', description: 'Full name of the graduate (cleaned when available)', sample: 'Gregory Sepich-Poore' },
+  {
+    name: 'id',
+    type: 'uuid',
+    description: 'Unique identifier for each graduate',
+    sample: '3a1f8c2e-...',
+  },
+  {
+    name: 'name',
+    type: 'text',
+    description: 'Full name of the graduate (cleaned when available)',
+    sample: 'Gregory Sepich-Poore',
+  },
   { name: 'gender', type: 'text', description: 'Gender of the graduate', sample: 'male' },
 ]
 
 const EDUCATION_COLUMNS = [
-  { name: 'id', type: 'text', description: 'Unique identifier for each education record', sample: 'edu_3a1f...' },
-  { name: 'graduate_id', type: 'uuid', description: 'Foreign key linking to Graduates table', sample: '3a1f8c2e-...' },
-  { name: 'degree', type: 'text', description: 'Degree obtained (PhD, MS, BA, etc.)', sample: 'PhD' },
-  { name: 'subject', type: 'text', description: 'Broad discipline / subject area', sample: 'economics' },
-  { name: 'field', type: 'text', description: 'Broader research field or specialization', sample: 'organic chemistry' },
-  { name: 'program_id', type: 'text', description: 'Unique identifier for the program', sample: 'cs_phd' },
-  { name: 'program', type: 'text', description: 'Name of the academic program', sample: 'Computer Science PhD' },
-  { name: 'institution_id', type: 'text', description: 'Foreign key linking to Institution table', sample: 'stanford' },
+  {
+    name: 'id',
+    type: 'text',
+    description: 'Unique identifier for each education record',
+    sample: 'edu_3a1f...',
+  },
+  {
+    name: 'graduate_id',
+    type: 'uuid',
+    description: 'Foreign key linking to Graduates table',
+    sample: '3a1f8c2e-...',
+  },
+  {
+    name: 'degree',
+    type: 'text',
+    description: 'Degree obtained (PhD, MS, BA, etc.)',
+    sample: 'PhD',
+  },
+  {
+    name: 'subject',
+    type: 'text',
+    description: 'Broad discipline / subject area',
+    sample: 'economics',
+  },
+  {
+    name: 'field',
+    type: 'text',
+    description: 'Broader research field or specialization',
+    sample: 'organic chemistry',
+  },
+  {
+    name: 'program_id',
+    type: 'text',
+    description: 'Unique identifier for the program',
+    sample: 'cs_phd',
+  },
+  {
+    name: 'program',
+    type: 'text',
+    description: 'Name of the academic program',
+    sample: 'Computer Science PhD',
+  },
+  {
+    name: 'institution_id',
+    type: 'text',
+    description: 'Foreign key linking to Institution table',
+    sample: 'stanford',
+  },
   { name: 'year', type: 'integer', description: 'Year degree was awarded', sample: '2019' },
-  { name: 'advisor', type: 'text', description: 'Name of the thesis advisor', sample: 'Dr. Jane Smith' },
+  {
+    name: 'advisor',
+    type: 'text',
+    description: 'Name of the thesis advisor',
+    sample: 'Dr. Jane Smith',
+  },
 ]
 
 const CAREER_COLUMNS = [
-  { name: 'id', type: 'text', description: 'Unique identifier for each career record', sample: 'car_5b2e...' },
-  { name: 'graduate_id', type: 'uuid', description: 'Foreign key linking to Graduates table', sample: '3a1f8c2e-...' },
-  { name: 'year', type: 'integer', description: 'Starting year of this career position', sample: '2025' },
-  { name: 'designation', type: 'text', description: 'Job title', sample: 'stanford neuroscience postdoc' },
-  { name: 'institution_id', type: 'text', description: 'Foreign key linking to Institution table', sample: 'stanford' },
+  {
+    name: 'id',
+    type: 'text',
+    description: 'Unique identifier for each career record',
+    sample: 'car_5b2e...',
+  },
+  {
+    name: 'graduate_id',
+    type: 'uuid',
+    description: 'Foreign key linking to Graduates table',
+    sample: '3a1f8c2e-...',
+  },
+  {
+    name: 'year',
+    type: 'integer',
+    description: 'Starting year of this career position',
+    sample: '2025',
+  },
+  {
+    name: 'designation',
+    type: 'text',
+    description: 'Job title',
+    sample: 'stanford neuroscience postdoc',
+  },
+  {
+    name: 'institution_id',
+    type: 'text',
+    description: 'Foreign key linking to Institution table',
+    sample: 'stanford',
+  },
 ]
 
 const STATS = {
@@ -70,9 +174,7 @@ function ColumnTable({
           {icon}
           <h3>{title}</h3>
         </div>
-        <div className="buydata-stat-badge">
-          {stat.rows} rows
-        </div>
+        <div className="buydata-stat-badge">{stat.rows} rows</div>
       </div>
       <div className="buydata-table-wrapper">
         <table className="buydata-table">
@@ -87,10 +189,16 @@ function ColumnTable({
           <tbody>
             {columns.map((col) => (
               <tr key={col.name}>
-                <td><code>{col.name}</code></td>
-                <td><span className="buydata-type">{col.type}</span></td>
+                <td>
+                  <code>{col.name}</code>
+                </td>
+                <td>
+                  <span className="buydata-type">{col.type}</span>
+                </td>
                 <td>{col.description}</td>
-                <td><span className="buydata-sample">{col.sample}</span></td>
+                <td>
+                  <span className="buydata-sample">{col.sample}</span>
+                </td>
               </tr>
             ))}
           </tbody>
@@ -100,7 +208,15 @@ function ColumnTable({
   )
 }
 
-function SampleTable({ title, icon, rows }: { title: string; icon: React.ReactNode; rows: Record<string, string | null>[] }) {
+function SampleTable({
+  title,
+  icon,
+  rows,
+}: {
+  title: string
+  icon: React.ReactNode
+  rows: Record<string, string | null>[]
+}) {
   if (!rows.length) return null
   const columns = Object.keys(rows[0])
   return (
@@ -110,9 +226,7 @@ function SampleTable({ title, icon, rows }: { title: string; icon: React.ReactNo
           {icon}
           <h3>{title}</h3>
         </div>
-        <div className="buydata-stat-badge">
-          {rows.length} sample rows
-        </div>
+        <div className="buydata-stat-badge">{rows.length} sample rows</div>
       </div>
       <div className="buydata-table-wrapper">
         <table className="buydata-table">
@@ -156,9 +270,7 @@ function DistributionBar({ label, count, max }: { label: string; count: number; 
 function DataExampleTab() {
   return (
     <div className="buydata-example">
-      <p className="buydata-example-note">
-        Below is a sample of 5 rows from each table.
-      </p>
+      <p className="buydata-example-note">Below is a sample of 5 rows from each table.</p>
 
       <SampleTable
         title="Institution"
@@ -175,11 +287,7 @@ function DataExampleTab() {
         icon={<GraduationCap size={20} />}
         rows={sampleData.sample.education}
       />
-      <SampleTable
-        title="Career"
-        icon={<Briefcase size={20} />}
-        rows={sampleData.sample.career}
-      />
+      <SampleTable title="Career" icon={<Briefcase size={20} />} rows={sampleData.sample.career} />
     </div>
   )
 }
@@ -187,18 +295,18 @@ function DataExampleTab() {
 function DistributionTab() {
   const yearEntries = Object.entries(sampleData.distributions.year)
     .map(([y, c]) => ({ year: Number(y), count: c }))
-    .filter(d => d.year >= 2000)
-  const maxYear = Math.max(...yearEntries.map(d => d.count))
+    .filter((d) => d.year >= 2000)
+  const maxYear = Math.max(...yearEntries.map((d) => d.count))
 
   const subjectEntries = Object.entries(sampleData.distributions.subject)
     .map(([s, c]) => ({ subject: s, count: c }))
     .slice(0, 20)
-  const maxSubject = Math.max(...subjectEntries.map(d => d.count))
+  const maxSubject = Math.max(...subjectEntries.map((d) => d.count))
 
   const institutionEntries = Object.entries(sampleData.distributions.institution)
     .map(([name, c]) => ({ name, count: c }))
     .slice(0, 20)
-  const maxInstitution = Math.max(...institutionEntries.map(d => d.count))
+  const maxInstitution = Math.max(...institutionEntries.map((d) => d.count))
 
   return (
     <div className="buydata-example">
@@ -211,7 +319,7 @@ function DistributionTab() {
           </div>
         </div>
         <div className="buydata-dist-container">
-          {yearEntries.map(d => (
+          {yearEntries.map((d) => (
             <DistributionBar key={d.year} label={String(d.year)} count={d.count} max={maxYear} />
           ))}
         </div>
@@ -226,7 +334,7 @@ function DistributionTab() {
           </div>
         </div>
         <div className="buydata-dist-container">
-          {institutionEntries.map(d => (
+          {institutionEntries.map((d) => (
             <DistributionBar key={d.name} label={d.name} count={d.count} max={maxInstitution} />
           ))}
         </div>
@@ -241,7 +349,7 @@ function DistributionTab() {
           </div>
         </div>
         <div className="buydata-dist-container">
-          {subjectEntries.map(d => (
+          {subjectEntries.map((d) => (
             <DistributionBar key={d.subject} label={d.subject} count={d.count} max={maxSubject} />
           ))}
         </div>
@@ -284,10 +392,7 @@ function PaymentTab() {
     <div className="buydata-payment">
       {/* Data Sharing Agreement */}
       <div className="buydata-terms-section">
-        <button
-          className="buydata-terms-toggle"
-          onClick={() => setTermsExpanded(!termsExpanded)}
-        >
+        <button className="buydata-terms-toggle" onClick={() => setTermsExpanded(!termsExpanded)}>
           <span>Data Sharing Agreement</span>
           {termsExpanded ? <ChevronUp size={18} /> : <ChevronDown size={18} />}
         </button>
@@ -331,7 +436,9 @@ function PaymentTab() {
               }}
             />
           </div>
-          <label className="buydata-email-label" style={{ marginTop: '0.75rem' }}>Institutional Email (.edu) — data will be delivered to this address</label>
+          <label className="buydata-email-label" style={{ marginTop: '0.75rem' }}>
+            Institutional Email (.edu) — data will be delivered to this address
+          </label>
           <div className="buydata-email-row">
             <input
               type="email"
@@ -357,13 +464,20 @@ function PaymentTab() {
       {formVerified && (
         <div className="buydata-payment-gateway">
           <h3>Complete Purchase</h3>
-          <p>Data will be emailed within 24 hours (likely within 1 hour) to <strong>{email.trim().toLowerCase()}</strong> ({fullName.trim()}) after payment.</p>
+          <p>
+            Data will be emailed within 24 hours (likely within 1 hour) to{' '}
+            <strong>{email.trim().toLowerCase()}</strong> ({fullName.trim()}) after payment.
+          </p>
           <a
             className="buydata-pay-button"
             href={`${DODO_CHECKOUT_BASE}/${DODO_PRODUCT_ID}?quantity=1&fullName=${encodeURIComponent(fullName.trim())}&disableFullName=true&email=${encodeURIComponent(email.trim().toLowerCase())}&disableEmail=true&redirect_url=${encodeURIComponent(window.location.origin + '/checkout/success')}`}
             onClick={() => {
               // Save email to localStorage so success page can display it
-              try { localStorage.setItem('buydata_email', email.trim().toLowerCase()) } catch {}
+              try {
+                localStorage.setItem('buydata_email', email.trim().toLowerCase())
+              } catch {
+                // localStorage not available
+              }
             }}
             target="_blank"
             rel="noopener noreferrer"
@@ -377,7 +491,7 @@ function PaymentTab() {
   )
 }
 
-export function BuyData({ isActive: _isActive = true }: BuyDataProps) {
+export function BuyData({}: BuyDataProps) {
   const [subTab, setSubTab] = useState<BuyDataSubTab>('description')
 
   return (
@@ -484,3 +598,5 @@ export function BuyData({ isActive: _isActive = true }: BuyDataProps) {
     </div>
   )
 }
+
+export default BuyData

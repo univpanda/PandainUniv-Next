@@ -32,7 +32,6 @@ dist-ssr
 # Build outputs
 build
 
-src
 dist
 
 # Next.js

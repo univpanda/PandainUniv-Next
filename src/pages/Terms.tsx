@@ -3,8 +3,6 @@ import { useAuth } from '../hooks/useAuth'
 import { useDeleteOwnAccount } from '../hooks'
 import { ButtonSpinner } from '../components/ui/LoadingSpinner'
 
-
-
 export function Terms() {
   const { user } = useAuth()
   const deleteAccount = useDeleteOwnAccount()
@@ -237,3 +235,5 @@ export function Terms() {
     </div>
   )
 }
+
+export default Terms

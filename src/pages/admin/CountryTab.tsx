@@ -410,3 +410,5 @@ export function CountryTab({ state, setState }: CountryTabProps) {
     </div>
   )
 }
+
+export default CountryTab

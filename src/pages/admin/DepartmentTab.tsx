@@ -13,11 +13,7 @@ import { SearchInput } from '../../components/ui'
 import { InlineEditCell } from '../../components/admin/InlineEditCell'
 import { InlineRowActionCell } from '../../components/admin/InlineRowActionCell'
 import { AdminPagination } from '../../components/admin/AdminPagination'
-import {
-  DEPARTMENTS_PER_PAGE,
-  type DepartmentSortColumn,
-  type DepartmentTabProps,
-} from './types'
+import { DEPARTMENTS_PER_PAGE, type DepartmentSortColumn, type DepartmentTabProps } from './types'
 
 interface EditingDepartment {
   id: string
@@ -564,3 +560,5 @@ export function DepartmentTab({ state, setState }: DepartmentTabProps) {
     </div>
   )
 }
+
+export default DepartmentTab

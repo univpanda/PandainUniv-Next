@@ -19,7 +19,13 @@ import {
 } from 'lucide-react'
 import { formatDateAbsolute, formatRelativeTime } from '../utils/format'
 import { useAuth } from '../hooks/useAuth'
-import { usePaginatedUsers, usePrefetchUsers, useToggleAdmin, useToggleBlock, useDeleteUser } from '../hooks/useUserQueries'
+import {
+  usePaginatedUsers,
+  usePrefetchUsers,
+  useToggleAdmin,
+  useToggleBlock,
+  useDeleteUser,
+} from '../hooks/useUserQueries'
 import { useToast } from '../contexts/ToastContext'
 import {
   LoadingSpinner,
@@ -227,9 +233,7 @@ export function UserManagement({ isActive = true }: UserManagementProps) {
       { userId, currentlyBlocked },
       {
         onSuccess: () => {
-          toast.showSuccess(
-            currentlyBlocked ? `Unblocked ${username}` : `Blocked ${username}`
-          )
+          toast.showSuccess(currentlyBlocked ? `Unblocked ${username}` : `Blocked ${username}`)
         },
         onError: (error) => {
           toast.showError(
@@ -411,9 +415,11 @@ export function UserManagement({ isActive = true }: UserManagementProps) {
                         className="engagement-stat flagged clickable"
                         title="View flagged posts"
                         onClick={() => {
-                          window.dispatchEvent(new CustomEvent('searchDiscussion', {
-                            detail: { searchQuery: `@${user.username} @flagged` }
-                          }))
+                          window.dispatchEvent(
+                            new CustomEvent('searchDiscussion', {
+                              detail: { searchQuery: `@${user.username} @flagged` },
+                            })
+                          )
                         }}
                       >
                         <AlertTriangle size={14} />
@@ -522,3 +528,5 @@ export function UserManagement({ isActive = true }: UserManagementProps) {
     </div>
   )
 }
+
+export default UserManagement

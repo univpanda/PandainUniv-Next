@@ -107,14 +107,14 @@ export const Profile = memo(function Profile() {
                 </div>
               </button>
               <div className="profile-stat">
-                <img src={happyPanda.src} alt="" className="profile-stat-icon" />
+                <img src={happyPanda} alt="" className="profile-stat-icon" />
                 <div className="profile-stat-info">
                   <span className="profile-stat-value">{stats?.upvotesReceived ?? 0}</span>
                   <span className="profile-stat-label">Upvotes</span>
                 </div>
               </div>
               <div className="profile-stat">
-                <img src={sadPanda.src} alt="" className="profile-stat-icon" />
+                <img src={sadPanda} alt="" className="profile-stat-icon" />
                 <div className="profile-stat-info">
                   <span className="profile-stat-value">{stats?.downvotesReceived ?? 0}</span>
                   <span className="profile-stat-label">Downvotes</span>
@@ -162,3 +162,5 @@ export const Profile = memo(function Profile() {
     </div>
   )
 })
+
+export default Profile

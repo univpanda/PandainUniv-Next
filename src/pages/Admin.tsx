@@ -101,3 +101,5 @@ export function Admin({ isActive = true }: AdminProps) {
     </div>
   )
 }
+
+export default Admin

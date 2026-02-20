@@ -12,11 +12,7 @@ import { SearchInput } from '../../components/ui'
 import { InlineEditCell } from '../../components/admin/InlineEditCell'
 import { InlineRowActionCell } from '../../components/admin/InlineRowActionCell'
 import { AdminPagination } from '../../components/admin/AdminPagination'
-import {
-  UNIVERSITIES_PER_PAGE,
-  type UniversitySortColumn,
-  type UniversityTabProps,
-} from './types'
+import { UNIVERSITIES_PER_PAGE, type UniversitySortColumn, type UniversityTabProps } from './types'
 
 interface EditingUniversity {
   id: string
@@ -506,3 +502,5 @@ export function UniversityTab({ state, setState }: UniversityTabProps) {
     </div>
   )
 }
+
+export default UniversityTab

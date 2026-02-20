@@ -66,7 +66,13 @@ export function Placements({ isActive = true }: PlacementsProps) {
     <div className="placements-container">
       <div className="placement-filters common-filters">
         <div className="filter-row">
-          <FilterSelect value={degree} options={['PhD']} onChange={() => {}} placeholder="PhD" disabled />
+          <FilterSelect
+            value={degree}
+            options={['PhD']}
+            onChange={() => {}}
+            placeholder="PhD"
+            disabled
+          />
           <FilterSelect
             value={effectiveFromYear.toString()}
             options={startYearOptions}
@@ -86,7 +92,9 @@ export function Placements({ isActive = true }: PlacementsProps) {
               <LogIn size={18} />
               <span>Sign in</span>
             </button>
-            <span className="sign-in-text-full">to see placement data starting {MIN_YEAR_AUTH}</span>
+            <span className="sign-in-text-full">
+              to see placement data starting {MIN_YEAR_AUTH}
+            </span>
             <span className="sign-in-text-short">for {MIN_YEAR_AUTH}+ data</span>
           </div>
         )}
@@ -118,12 +126,20 @@ export function Placements({ isActive = true }: PlacementsProps) {
           <SearchTab isActive={isActive && subTab === 'search'} commonFilters={commonFilters} />
         </div>
         <div className={subTab !== 'compare' ? 'hidden' : ''}>
-          <ComparisonTab isActive={isActive && subTab === 'compare'} commonFilters={commonFilters} />
+          <ComparisonTab
+            isActive={isActive && subTab === 'compare'}
+            commonFilters={commonFilters}
+          />
         </div>
         <div className={subTab !== 'reverse' ? 'hidden' : ''}>
-          <ReverseSearchTab isActive={isActive && subTab === 'reverse'} commonFilters={commonFilters} />
+          <ReverseSearchTab
+            isActive={isActive && subTab === 'reverse'}
+            commonFilters={commonFilters}
+          />
         </div>
       </div>
     </div>
   )
 }
+
+export default Placements

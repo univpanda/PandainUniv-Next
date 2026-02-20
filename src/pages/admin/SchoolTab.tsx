@@ -536,3 +536,5 @@ export function SchoolTab({ state, setState }: SchoolTabProps) {
     </div>
   )
 }
+
+export default SchoolTab

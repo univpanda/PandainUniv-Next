@@ -155,13 +155,13 @@ export function Notifications({ onNavigateToPost }: NotificationsProps) {
                   )}
                   {notification.new_upvotes > 0 && (
                     <span className="notification-badge likes">
-                      <img src={happyPanda.src} alt="" className="notification-panda-icon" />
+                      <img src={happyPanda} alt="" className="notification-panda-icon" />
                       {notification.new_upvotes} new
                     </span>
                   )}
                   {notification.new_downvotes > 0 && (
                     <span className="notification-badge dislikes">
-                      <img src={sadPanda.src} alt="" className="notification-panda-icon" />
+                      <img src={sadPanda} alt="" className="notification-panda-icon" />
                       {notification.new_downvotes} new
                     </span>
                   )}
@@ -192,3 +192,5 @@ export function Notifications({ onNavigateToPost }: NotificationsProps) {
     </div>
   )
 }
+
+export default Notifications

@@ -310,7 +310,10 @@ export function Discussion({
 
         {/* New Thread Composer */}
         {nav.view === 'list' && (
-          <div className="discussion-toolbar-wrap discussion-toolbar-wrap--top" ref={newThreadComposerRef}>
+          <div
+            className="discussion-toolbar-wrap discussion-toolbar-wrap--top"
+            ref={newThreadComposerRef}
+          >
             <div className="discussion-toolbar-row">
               {/* Left side: Sort + Take a bite */}
               <div className="discussion-toolbar-left">
@@ -500,11 +503,7 @@ export function Discussion({
                         <option value="recent">Recent</option>
                         <option value="new">New</option>
                       </select>
-                      <ChevronDown
-                        className="sort-select-icon"
-                        size={16}
-                        aria-hidden="true"
-                      />
+                      <ChevronDown className="sort-select-icon" size={16} aria-hidden="true" />
                     </div>
                   </div>
                   {auth.user && !showNewThread && (
@@ -612,3 +611,5 @@ export function Discussion({
     </div>
   )
 }
+
+export default Discussion

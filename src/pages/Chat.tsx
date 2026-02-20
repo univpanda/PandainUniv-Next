@@ -6,7 +6,12 @@ import { AlertBanner } from '../components/ui'
 import { ChatConversationList, ChatConversation } from '../components/chat'
 
 interface ChatProps {
-  initialPartner?: { id: string; username: string | null; avatar: string | null; avatarPath?: string | null } | null
+  initialPartner?: {
+    id: string
+    username: string | null
+    avatar: string | null
+    avatarPath?: string | null
+  } | null
   onInitialPartnerConsumed?: () => void
   resetToList?: number
 }
@@ -71,18 +76,26 @@ export function Chat({ initialPartner, onInitialPartnerConsumed, resetToList }: 
 
   const toast = useToast()
 
-  const handleIgnoreToggled = useCallback((username: string, isNowIgnored: boolean) => {
-    if (isNowIgnored) {
-      toast.showSuccess(`${username} has been shushed`)
-    } else {
-      toast.showSuccess(`${username} has been unshushed`)
-    }
-  }, [toast])
+  const handleIgnoreToggled = useCallback(
+    (username: string, isNowIgnored: boolean) => {
+      if (isNowIgnored) {
+        toast.showSuccess(`${username} has been shushed`)
+      } else {
+        toast.showSuccess(`${username} has been unshushed`)
+      }
+    },
+    [toast]
+  )
 
   // Handle initial partner from Discussion username hover
   useEffect(() => {
     if (initialPartner && user) {
-      startNewChat(initialPartner.id, initialPartner.username, initialPartner.avatar, initialPartner.avatarPath)
+      startNewChat(
+        initialPartner.id,
+        initialPartner.username,
+        initialPartner.avatar,
+        initialPartner.avatarPath
+      )
       onInitialPartnerConsumed?.()
     }
   }, [initialPartner, user, startNewChat, onInitialPartnerConsumed])
@@ -91,9 +104,7 @@ export function Chat({ initialPartner, onInitialPartnerConsumed, resetToList }: 
   if (!user) {
     return (
       <div className="chat-container">
-        <div className="chat-sign-in-prompt">
-          Please sign in to use chat.
-        </div>
+        <div className="chat-sign-in-prompt">Please sign in to use chat.</div>
       </div>
     )
   }
@@ -164,3 +175,5 @@ export function Chat({ initialPartner, onInitialPartnerConsumed, resetToList }: 
 
   return null
 }
+
+export default Chat
