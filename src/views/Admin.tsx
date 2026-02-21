@@ -1,3 +1,4 @@
+'use client'
 import { useState } from 'react'
 import { UserManagement } from './UserManagement'
 import { CountryTab } from '../components/admin-tabs/CountryTab'
